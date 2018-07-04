@@ -27,8 +27,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/mongoscraperHW");
 
+//mongoose.connect("mongodb://localhost/mongoscraperHW");
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds125031.mlab.com:25031/heroku_rbk5qptz");
 // Routes
 //https://www.easyphonenumberlookups.com/323-205
 // A GET route for scraping the echoJS website
