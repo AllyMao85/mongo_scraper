@@ -28,8 +28,8 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 
-//mongoose.connect("mongodb://localhost/mongoscraperHW");
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds125031.mlab.com:25031/heroku_rbk5qptz");
+// mongoose.connect("mongodb://localhost/mongoscraperHW");
+mongoose.connect("mongodb://<heroku_rbk5qptz>:<>@ds125031.mlab.com:25031/heroku_rbk5qptz");
 // Routes
 //https://www.easyphonenumberlookups.com/323-205
 // A GET route for scraping the echoJS website
@@ -113,7 +113,7 @@ app.get("/products", function(req, res) {
   db.Product.find({})
   .populate("note")
   .then(function(dbProduct) {
-    
+    console.log(dbProduct);
     res.json(dbProduct);
   })
   .catch(function(err) {

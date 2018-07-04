@@ -1,13 +1,15 @@
 // Grab the articles as a json
 $.getJSON("/products", function(data) {
   // For each one
-  console.log(data[0]);
+  console.log(data[0].note.length);
 
   for (var i = 0; i < data.length; i++) {
     //once you have note information
     // Display the all the notes under each object on the page
     $("#products").append("<div id='"+data[i]._id+"'><p data-id='" + data[i]._id + "'>" + data[i].category +' || '+ data[i].price  + "</p><a href='" + data[i].link + "'>Product Link</a><br/><img src='"+data[i].imglink+"' width='200' height='200'></br><button data-id='" + data[i]._id + "' class='addnote'>Add Note</button><div id='note"+ data[i]._id+"'></div></div><hr>");
-    
+    for (var n=0;n<data[i].note.length; n++) {
+      $("#note"+ data[i]._id).append("<p>"+data[i].note[n].title+': '+data[i].note[n].body+";</p>");
+    }
   }
 });
 
