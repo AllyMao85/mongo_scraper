@@ -1,7 +1,7 @@
 // Grab the articles as a json
 $.getJSON("/products", function(data) {
   // For each one
-  console.log(data[0].note.length);
+  //console.log(data[0].note.length);
 
   for (var i = 0; i < data.length; i++) {
     //once you have note information
