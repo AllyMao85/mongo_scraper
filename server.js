@@ -97,7 +97,7 @@ app.get("/scrape", function(req, res) {
       db.Product.create(result)
         .then(function(dbProduct) {
           // View the added result in the console
-          console.log(dbProduct);
+          //console.log(dbProduct);
         })
         .catch(function(err) {
           // If an error occurred, send it to the client
@@ -115,7 +115,7 @@ app.get("/products", function(req, res) {
   db.Product.find({})
   .populate("note")
   .then(function(dbProduct) {
-    console.log(dbProduct);
+    //console.log(dbProduct);
     res.json(dbProduct);
   })
   .catch(function(err) {
